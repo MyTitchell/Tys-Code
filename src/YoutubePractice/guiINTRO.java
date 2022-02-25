@@ -13,5 +13,6 @@ public class guiINTRO {
 		
 		double height = Integer.parseInt(JOptionPane.showInputDialog("Enter your Height"));
 		JOptionPane.showMessageDialog(null, "You are "+height+" in tall");
+
 	}
 }

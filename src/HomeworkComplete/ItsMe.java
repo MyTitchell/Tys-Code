@@ -51,7 +51,7 @@
 		
 		//Defines where to write
 		try {
-		FileWriter writer = new FileWriter("C:\\Users\\xsnot\\git\\Tys-Code\\src\\HomeworkComplete\\MyInfo.txt");
+		FileWriter writer = new FileWriter("MyInfo.txt");
 		
 		//Writes personal info in .txt
 		writer.write(facts[0]);

@@ -1,6 +1,8 @@
 package HomeworkPractice;
 
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
@@ -37,7 +39,7 @@ public class homeWorkPractice4 {
 			JOptionPane.showMessageDialog(null,"you added: " + userInfo);
 				
 			//Ask for any extra info
-			result = JOptionPane.showConfirmDialog(null, "Would you Like to add any extra information?", "User Confirmation", JOptionPane.YES_NO_OPTION);
+			result = JOptionPane.showConfirmDialog(null, "Would you like to add any extra information?", "Additional Information", JOptionPane.YES_NO_OPTION);
 			}
 		
 		//Compiles the information taken from userInfo
@@ -51,7 +53,24 @@ public class homeWorkPractice4 {
 		}
 		//If user hits no display all data
 		JOptionPane.showMessageDialog(null, "Name: " + name+ "\n" + "Age: " +age + "\n" + "Additional Info: " +  additionalInfoPrint);
-	
-	}
-
+		
+		int resultTwo = JOptionPane.showConfirmDialog(null, "Would you like to write a file?", "File Writing", JOptionPane.YES_NO_OPTION);
+			while (resultTwo == JOptionPane.YES_OPTION); {
+			String fileName = JOptionPane.showInputDialog("What would you like to name the file?");
+			JOptionPane.showMessageDialog(null, "Name: " + name+ "\n" + "Age: " +age + "\n" + "Additional Info: " +  additionalInfoPrint);
+			
+			try {
+				FileWriter writer = new FileWriter(fileName);
+				writer.write("Name: " + name+ "\n" + "Age: " +age + "\n" + "Additional Info: " +  additionalInfoPrint);
+				writer.close();
+				}
+				catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (resultTwo == JOptionPane.NO_OPTION);{
+			JOptionPane.showMessageDialog(null,"Thank you for playing!");
+						
+		}	
+	}	
 }

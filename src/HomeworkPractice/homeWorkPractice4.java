@@ -53,9 +53,10 @@ public class homeWorkPractice4 {
 		}
 		//If user hits no display all data
 		JOptionPane.showMessageDialog(null, "Name: " + name+ "\n" + "Age: " +age + "\n" + "Additional Info: " +  additionalInfoPrint);
-		
+		 
 		int resultTwo = JOptionPane.showConfirmDialog(null, "Would you like to write a file?", "File Writing", JOptionPane.YES_NO_OPTION);
-			while (resultTwo == JOptionPane.YES_OPTION); {
+			
+		if (resultTwo == JOptionPane.YES_OPTION) {
 			String fileName = JOptionPane.showInputDialog("What would you like to name the file?");
 			JOptionPane.showMessageDialog(null, "Name: " + name+ "\n" + "Age: " +age + "\n" + "Additional Info: " +  additionalInfoPrint);
 			
@@ -67,10 +68,11 @@ public class homeWorkPractice4 {
 				catch(IOException e) {
 					e.printStackTrace();
 				}
-			}
-			if (resultTwo == JOptionPane.NO_OPTION);{
+				}
+	
+		if (resultTwo == JOptionPane.NO_OPTION);{
 			JOptionPane.showMessageDialog(null,"Thank you for playing!");
-						
-		}	
-	}	
+		
+		}			
+	}
 }
